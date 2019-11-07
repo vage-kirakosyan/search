@@ -23,7 +23,7 @@ function styles() {
 
 function scripts() {
   return gulp.src('./search.js')
-    .pipe(concat('scripts.js'))
+    .pipe(concat('search.js'))
     .pipe(babel({
         presets: ['@babel/env']
     }))

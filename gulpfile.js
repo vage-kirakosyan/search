@@ -8,7 +8,7 @@ const browserSync = require('browser-sync').create();
 const babel = require('gulp-babel');
 
 function styles() {
-  return gulp.src('./style.css')
+  return gulp.src('./src/style.css')
     .pipe(concat('style.css'))
     .pipe(autoprefixer({
       browsers: ['>0.1%'],
@@ -22,7 +22,7 @@ function styles() {
 }
 
 function scripts() {
-  return gulp.src('./search.js')
+  return gulp.src('./src/search.js')
     .pipe(concat('search.js'))
     .pipe(babel({
         presets: ['@babel/env']
@@ -44,8 +44,8 @@ function watch() {
       baseDir: "./"
     }
   });
-  gulp.watch('./*css', styles);
-  gulp.watch('./*js', scripts);
+  gulp.watch('./src/*css', styles);
+  gulp.watch('./src/*js', scripts);
   gulp.watch("./*.html").on('change', browserSync.reload);
 }
 
